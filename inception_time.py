@@ -7,15 +7,15 @@ from utils import save_logs
 from utils import calculate_metrics
 from utils import save_test_duration
 
+class Regressor_INCEPTION:
 
-class Classifier_INCEPTION:
-
-    def __init__(self, output_directory, input_shape, nb_classes, verbose=False, build=True, batch_size=64,
+    def __init__(self, output_directory, input_shape, nb_classes, global_avg_pooling=False, verbose=False, build=True, batch_size=64,
                  nb_filters=32, use_residual=True, use_bottleneck=True, depth=6, kernel_size=41, nb_epochs=1500):
 
         self.output_directory = output_directory
 
         self.nb_filters = nb_filters
+        self.global_avg_pooling = global_avg_pooling
         self.use_residual = use_residual
         self.use_bottleneck = use_bottleneck
         self.depth = depth
@@ -85,9 +85,14 @@ class Classifier_INCEPTION:
                 x = self._shortcut_layer(input_res, x)
                 input_res = x
 
-        gap_layer = tf.keras.layers.GlobalAveragePooling1D()(x)
-
-        output_layer = tf.keras.layers.Dense(1)(gap_layer)
+        if self.global_avg_pooling:
+            gap_layer = tf.keras.layers.GlobalAveragePooling1D()(x)
+            output_layer = tf.keras.layers.Dense(1)(gap_layer)
+        else: 
+            pooling_layer = tf.keras.layers.AveragePooling1D(pool_size=50)(x)
+            flat_layer = tf.keras.layers.Flatten()(pooling_layer)
+            dense_layer = tf.keras.layers.Dense(128)(flat_layer)
+            output_layer = tf.keras.layers.Dense(1)(dense_layer)
 
         model = tf.keras.models.Model(inputs=input_layer, outputs=output_layer)
         model.compile(loss='mean_squared_error', optimizer=tf.keras.optimizers.Adam(), 

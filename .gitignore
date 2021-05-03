@@ -4,3 +4,5 @@ __pycache__/
 Data/*
 config.py
 trained_models/*
+*.hdf5
+*.hdf5

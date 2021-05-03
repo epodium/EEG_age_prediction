@@ -1,13 +1,27 @@
 # config.py template
 # Add your respective folder names and save as config.py
+# Please note that there are two roots used here, these can be the same root
 
+# Root folder (EEG_age_prediction/)
 ROOT = ""
-PATH_CODE = ROOT + "Notebooks/"
-PATH_DATA = ROOT + "Data/"
-PATH_DATA_PROCESSED = ROOT + "Data/data_processed/"
+
+# Second root for large data storage (e.g. External HDD)
+SECOND_ROOT = ""
+
+# Already preprocessed data for initial experiments - before using own preprocessing pipeline
+PATH_DATA_PROCESSED_OLD = ROOT + "Data/data_processed_old/"
+
+# Saved models
 PATH_MODELS = ROOT + "trained_models/"
 
-ROOT_EXTERNAL_HDD = ""
-PATH_RAW_DATA = ROOT_EXTERNAL_HDD + "Data/"
-PATH_METADATA = ROOT_EXTERNAL_HDD + "Data/ePODIUM_metadata/"
-PATH_OUTPUT = ROOT_EXTERNAL_HDD + "Data/data_processed/"
+# Processed data for DL models
+PATH_DATA_PROCESSED_DL = ROOT + "Data/data_processed_DL/"
+
+# Raw EEG data folder
+PATH_RAW_DATA = SECOND_ROOT + "Data/"
+
+# EEG metadata folder
+PATH_METADATA = SECOND_ROOT + "Data/ePODIUM_metadata/"
+
+# Processed data for ML models
+PATH_DATA_PROCESSED_ML = SECOND_ROOT + "Data/data_processed_ML/"
