@@ -29,7 +29,6 @@ Model validation:
 Weights inspection:
 - Deep learning EEG_Model inspection.ipynb (Inspection of the weights of a DL model, visualizations)
 
-
 ### Configuration file
 
 The config_template.py file should be renamed to config.py. Here the paths of the file locations can be stored. The ROOT folder can be the ROOT folder of this repository as well.
@@ -47,6 +46,10 @@ We made use of a SECOND_ROOT, which was an external harddisk. On this harddisk t
 ### Helper files
 
 The main folder of this repository also contains a few helper files, for example DataGenerators.
+
+### Scripts
+
+The scripts were used to train the models on an external cluster (Surfsara Lisa). This was done using the reduced DL data set and was only used for hyperparameter search of the DL models. The final models were trained using the full DL data set.
 
 
 ## Data set
