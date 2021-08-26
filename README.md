@@ -59,6 +59,6 @@ How to get the notebooks running? Assuming the raw data set and metadata is avai
 
 1. Install all Python packages required, using conda and the environment.yml file.
 2. Update the config_template.py file and rename to config.py.
-3. Use the preprocessing notebooks to process the raw data to usable data for either the ML or DL models (separate notebooks).
+3. Use the preprocessing notebooks to process the raw data to usable data for either the ML or (reduced) DL models (separate notebooks).
 4. The 'model training' notebooks can be used the train and save models.
 5. The 'model validation' notebooks can be used to assess the performance of the models.
