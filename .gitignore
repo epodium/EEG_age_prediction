@@ -6,3 +6,6 @@ config.py
 trained_models/*
 *.hdf5
 *.hdf5
+
+# Pycharm
+.idea
