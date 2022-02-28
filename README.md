@@ -55,6 +55,9 @@ The scripts were used to train the models on an external cluster (Surfsara Lisa)
 ## Data set
 
 The data set of this project is not publicly available as it contains privacy-sensitive information.
+NLeSC employees can download the data from [surfdrive](https://surfdrive.surf.nl/files/index.php/s/mkwBAisnYUaPRhy).
+Contact Pablo Lopez-Tarifa (p.lopez@esciencecenter.nl) for access to the data, 
+or Sven van der Burg (s.vanderburg@esciencecenter.nl) 
 
 ## Getting started
 
