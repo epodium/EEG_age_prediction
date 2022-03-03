@@ -14,6 +14,9 @@ PATH_MODELS = ROOT + "trained_models/"
 # Processed data for DL models
 PATH_DATA_PROCESSED_DL = ROOT + "Data/data_processed_DL/"
 
+# Processed data for DL models (reduced)
+PATH_DATA_PROCESSED_DL_REDUCED = ROOT + "Data/data_processed_DL_reduced/"
+
 # Processed data for ML models
 PATH_DATA_PROCESSED_ML = ROOT + "Data/data_processed_ML/"
 
